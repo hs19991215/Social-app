@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ScreenName} from '../common/commonText';
 import DrawerRoute from './drawerRoute';
 import User from '../modules/User';
+import UserDetails from '../modules/UserDetails';
 
 function HomeScreen() {
   return (
@@ -25,6 +26,7 @@ function StackRouteScreens() {
       }}>
       <Stack.Screen name={ScreenName.HOME} component={DrawerRoute} />
       <Stack.Screen name={ScreenName.USER} component={User} />
+      <Stack.Screen name={ScreenName.USER_DETAILS} component={UserDetails} />
     </Stack.Navigator>
   );
 }

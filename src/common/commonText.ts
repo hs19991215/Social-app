@@ -6,4 +6,5 @@ export const ScreenName = {
   NOTIFICATIONS: 'Notifications',
   WEBPANNEL: 'WebPannel',
   USER: 'User',
+  USER_DETAILS:"User Details"
 };

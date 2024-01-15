@@ -7,7 +7,7 @@ import {ScreenName} from '../../common/commonText';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAllUser} from '../../redux/actions/userAction';
 
-const User = () => {
+const User = (props:any) => {
   const dispatch = useDispatch<any>();
   const {data} = useSelector(state => state?.user);
 
@@ -17,20 +17,22 @@ const User = () => {
 
   const renderItem = (payload: any) => {
     return (
-      <Pressable onPress={() => console.log('first')} style={styles.cards}>
-        <View style={styles.flexRow}>
+      <Pressable onPress={() => props?.navigation.navigate(ScreenName.USER_DETAILS,{
+        data: payload
+      })} style={styles.cards}>
+        <View style={[styles.flexRow, styles.alignItemCenter]}>
           <Text style={styles?.hardText}>Name: </Text>
           <Text style={styles?.softText}>{payload?.item?.name}</Text>
         </View>
-        <View style={styles.flexRow}>
+        <View style={[styles.flexRow, styles.alignItemCenter]}>
           <Text style={styles?.hardText}>Email: </Text>
           <Text style={styles?.softText}>{payload?.item?.email}</Text>
         </View>
-        <View style={styles.flexRow}>
+        <View style={[styles.flexRow, styles.alignItemCenter]}>
           <Text style={styles?.hardText}>Created at: </Text>
           <Text style={styles?.softText}>{payload?.item?.createdAt}</Text>
         </View>
-        <View style={styles.flexRow}>
+        <View style={[styles.flexRow, styles.alignItemCenter]}>
           <Text style={styles?.softText}>
             No. of Posts: {payload?.item?.post?.length} |
           </Text>

@@ -7,6 +7,7 @@ export interface AuthStateType {
 
 export interface UserStateType {
   data: any[];
+  userDetail:any[];
   isLoading: boolean;
   error: null | object;
 }

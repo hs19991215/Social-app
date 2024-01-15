@@ -4,4 +4,5 @@ export const ENDPOINT = {
   addUser: '/api/addUser',
   login: '/api/userLogin',
   getAllUser: '/admin/getalluser',
+  getUserDetailById:"/api/getuserbyid"
 };
