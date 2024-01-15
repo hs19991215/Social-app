@@ -1,0 +1,27 @@
+import {createSlice} from '@reduxjs/toolkit';
+import {UserStateType} from '../types';
+
+const initialState: UserStateType = {
+  data: [],
+  isLoading: false,
+  error: null,
+};
+
+export const userSlice = createSlice({
+  name: 'user',
+  initialState,
+  reducers: {
+    requested: state => {
+      state.isLoading = true;
+    },
+    error: (state, action) => {
+      state.error = action.payload;
+    },
+    setData: (state, action) => {
+      state.data = action.payload;
+    },
+  },
+});
+
+export default userSlice.reducer;
+export const {requested, error, setData} = userSlice.actions;
