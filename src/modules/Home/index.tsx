@@ -8,15 +8,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {styles} from '../../common/styles';
 import Header from '../../components/Header';
 import {ScreenName} from '../../common/commonText';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
-import Geolocation from 'react-native-geolocation-service';
 import {markerData} from '../../../dummyData';
 import {COLORS} from '../../common/colors';
-
+// AIzaSyArTPWpAM0nnVzHvXQZKJpQD9djDpuzriU GMAP_API_KEY
+// AIzaSyCaopvu9ApRA-_P_xlhnt3Ds8CeVRIvcbw
 const Home = (props: any) => {
   const [open, setOpen] = useState('');
   const [getLocation, setGetLocation] = useState('');
