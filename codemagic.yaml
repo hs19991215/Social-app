@@ -1,0 +1,12 @@
+workflows:
+  react-native:
+    name: React Native App
+    environment:
+      node: latest
+    scripts:
+      - npm install
+      - npx react-native run-android --variant=debug
+      - npx react-native run-ios --configuration=Debug
+    artifacts:
+      - android/app/build/outputs/**/**/*.apk
+      - ios/build/Build/Products/**/*.app
