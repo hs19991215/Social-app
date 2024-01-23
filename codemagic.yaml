@@ -4,9 +4,9 @@ workflows:
     environment:
       node: latest
     scripts:
-      - npm install
-      - npx react-native run-android --variant=debug
-      - npx react-native run-ios --configuration=Debug
+      - yarn install
+      - yarn android
+      - yarn ios 
     artifacts:
       - android/app/build/outputs/**/**/*.apk
       - ios/build/Build/Products/**/*.app
