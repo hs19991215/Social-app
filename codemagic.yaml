@@ -5,18 +5,18 @@ workflows:
       android_signing:
         - keystore_reference
       vars:
-        PACKAGE_NAME: "com.awesomeproject"
-        CM_KEYSTORE_PATH: bXktdXBsb2FkLWtleS5rZXlzdG9yZQ==
-        CM_KEYSTORE_PASSWORD: YW5kcm9pZA==
-        CM_KEY_ALIAS: bXkta2V5LWFsaWFz
-        CM_KEY_PASSWORD: YW5kcm9pZA==
+       PACKAGE_NAME: "com.awesomeproject"
+       CM_KEYSTORE_PATH: bXktdXBsb2FkLWtleS5rZXlzdG9yZQ==
+       CM_KEYSTORE_PASSWORD: YW5kcm9pZA==
+       CM_KEY_ALIAS: bXkta2V5LWFsaWFz
+       CM_KEY_PASSWORD: YW5kcm9pZA==
       node: latest
     scripts:
       - yarn install
       - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
       - |
-         # Build Android
+         # build Android
          cd android
-         ./gradlew assembleRelease
+         ./gradlew assembleRelease 
     artifacts:
       - android/app/build/outputs/**/*.apk
