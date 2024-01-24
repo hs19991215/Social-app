@@ -5,7 +5,10 @@ workflows:
       android_signing:
         - keystore_reference
       vars:
-        JAVA_HOME: "/usr/lib/jvm/zulu-17.jdk/Contents/Home"
+       CM_KEYSTORE_PATH: bXktdXBsb2FkLWtleS5rZXlzdG9yZQ==
+       CM_KEYSTORE_PASSWORD: YW5kcm9pZA==
+       CM_KEY_ALIAS: bXkta2V5LWFsaWFz
+       CM_KEY_PASSWORD: YW5kcm9pZA==
       node: latest
     scripts:
       - yarn install
