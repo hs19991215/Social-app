@@ -14,9 +14,6 @@ workflows:
       - yarn install
       - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
       - |
-         # Verify Java version
-         java -version
-
          # build Android
          cd android
          ./gradlew assembleRelease 
