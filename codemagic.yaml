@@ -1,24 +1,22 @@
 workflows:
-react-native:
-  name: React Native App
-  environment:
-    vars:
-      XCODE_WORKSPACE: "{{ADD WORKSPACE NAME HERE}}"
-      XCODE_SCHEME: "{{ADD SCHEME NAME HERE}}"
-  node: latest
-  scripts:
-    - yarn install
-    - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local-properties"
-    - |
-      # Update Java version to 17
-      export JAVA_HOME=/path/to/your/java17
-      export PATH=$JAVA_HOME/bin:$PATH
+  version: 2
+  react-native:
+    name: React Native App
+    environment:
+      node: latest
+    scripts:
+      - yarn install
+      - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
+      - |
+         # Update Java version to 17
+         export JAVA_HOME=/path/to/your/java17
+         export PATH=$JAVA_HOME/bin:$PATH
 
-      # Verify Java version
-      java -version
+         # Verify Java version
+         java -version
 
-      # build Android
-      cd android
-      ./gradlew assembleRelease
-  artifacts:
-    - android/app/build/outputs/**/*.apk
+         # build Android
+         cd android
+         ./gradlew assembleRelease 
+    artifacts:
+      - android/app/build/outputs/**/*.apk
