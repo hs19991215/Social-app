@@ -1,7 +1,7 @@
 workflows:
   react-native:
-  instance_type: mac_pro
     name: React Native App
+      instance_type: mac_pro
     environment:
       android_signing:
         - keystore_reference
