@@ -1,5 +1,6 @@
 workflows:
   react-native:
+  instance_type: mac_pro
     name: React Native App
     environment:
       android_signing:
