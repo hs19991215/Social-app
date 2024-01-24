@@ -1,6 +1,10 @@
+workflows:
 react-native:
   name: React Native App
   environment:
+    vars:
+      XCODE_WORKSPACE: "{{ADD WORKSPACE NAME HERE}}"
+      XCODE_SCHEME: "{{ADD SCHEME NAME HERE}}"
   node: latest
   scripts:
     - yarn install
