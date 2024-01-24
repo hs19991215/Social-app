@@ -5,6 +5,7 @@ workflows:
       android_signing:
         - keystore_reference
       vars:
+       PACKAGE_NAME: "com.awesomeproject"
        CM_KEYSTORE_PATH: bXktdXBsb2FkLWtleS5rZXlzdG9yZQ==
        CM_KEYSTORE_PASSWORD: YW5kcm9pZA==
        CM_KEY_ALIAS: bXkta2V5LWFsaWFz
