@@ -1,5 +1,4 @@
 workflows:
-  version: 2
   react-native:
     name: React Native App
     environment:
